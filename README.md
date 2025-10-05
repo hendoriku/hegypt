@@ -1,5 +1,5 @@
 #### English
-Read in Other Language: [Indonesia](####Indonesia)
+Read in Other Language: [Indonesia](#Indonesia)
 
 Hegypt - Ideal AI Prompt Generator 🚀
 =====================================
@@ -107,7 +107,7 @@ Project Link: [https://github.com/your-username/hegypt-app](https://github.com/y
 
 * * *
 #### Indonesia
-Baca dalam bahasa lain: [English](####English)
+Baca dalam bahasa lain: [English](#English)
 
 Hegypt - Ideal AI Prompt Generator 🚀
 =====================================
