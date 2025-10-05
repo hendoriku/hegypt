@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hegypt - AI Prompt Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hegypt 🤖</h1>
+            <p>Platform untuk Merancang Instruksi AI yang Presisi dan Kuat</p>
+            <a href="{{ url_for('history') }}" class="history-link">Lihat Riwayat 📜</a>
+        </header>
+
+        {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flash-messages">
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/" method="POST" class="prompt-form">
+            
+            <h3>Langkah 1: Tentukan Dasar Permintaan</h3>
+            <div class="form-group">
+                <label for="ai_persona">Peran AI (AI Persona)</label>
+                <input type="text" id="ai_persona" name="ai_persona" placeholder="Contoh: Ahli Data Science, Copywriter Senior">
+            </div>
+            <div class="form-group">
+                <label for="core_objective">Tujuan Utama (Core Objective) *</label>
+                <textarea id="core_objective" name="core_objective" rows="2" placeholder="Apa hasil akhir yang paling Anda inginkan?" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="specific_task">Tugas Spesifik (Specific Tasks)</label>
+                <textarea id="specific_task" name="specific_task" rows="5" placeholder="Pecah tujuan utama menjadi tugas-tugas kecil. Gunakan list jika perlu.&#10;1. Analisis data.&#10;2. Identifikasi tren.&#10;3. Buat visualisasi."></textarea>
+            </div>
+
+            <hr>
+
+            <h3>Langkah 2: Berikan Konteks yang Jelas</h3>
+            <div class="form-group">
+                <label for="context">Konteks & Latar Belakang (Context)</label>
+                <textarea id="context" name="context" rows="3" placeholder="Informasi penting apa yang perlu AI ketahui?"></textarea>
+            </div>
+             <div class="form-group">
+                <label for="audience">Audiens Target (Target Audience)</label>
+                <input type="text" id="audience" name="audience" placeholder="Contoh: Programmer junior, tim marketing, investor">
+            </div>
+
+            <hr>
+
+            <h3>Langkah 3: Atur Format dan Gaya Output</h3>
+            <div class="form-group">
+                <label for="tone_style">Gaya & Nada (Tone & Style)</label>
+                <input type="text" id="tone_style" name="tone_style" placeholder="Contoh: Profesional dan formal, Kasual dan mudah dimengerti">
+            </div>
+            <div class="form-group">
+                <label for="output_structure">Struktur Output (Output Structure)</label>
+                <input type="text" id="output_structure" name="output_structure" placeholder="Contoh: Jawaban dalam format JSON, gunakan bullet points">
+            </div>
+
+            <hr>
+
+            <h3>Langkah 4: Tetapkan Batasan dan Contoh</h3>
+            <div class="form-group">
+                <label for="constraints">Aturan & Batasan (Constraints)</label>
+                <textarea id="constraints" name="constraints" rows="3" placeholder="Hal-hal yang WAJIB atau TIDAK BOLEH dilakukan AI.&#10;Contoh: Jangan gunakan library 'pandas'. Maksimal 300 kata."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="example">Contoh Ideal (Example)</label>
+                <textarea id="example" name="example" rows="3" placeholder="Berikan contoh input dan output yang Anda harapkan."></textarea>
+            </div>
+
+            <button type="submit" class="btn-generate">✨ Generate Powerful Prompt</button>
+        </form>
+
+        {% if generated_prompt %}
+        <section class="result-section">
+            <h2>Prompt Anda Berhasil Dibuat!</h2>
+            <div class="result-box">
+                <textarea id="promptResult" readonly>{{ generated_prompt }}</textarea>
+                <button onclick="copyPrompt()" class="btn-copy">Salin Prompt</button>
+            </div>
+        </section>
+        {% endif %}
+    </div>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
