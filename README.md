@@ -99,9 +99,9 @@ This project is distributed under the **MIT License**.
 👤 Contact
 ----------
 
-**Your Name** - [GitHub Profile](https://github.com/your-username)
+**Your Name** - [GitHub Profile](https://github.com/hendoriku)
 
-Project Link: [https://github.com/your-username/hegypt-app](https://github.com/your-username/hegypt-app)
+Project Link: [https://github.com/hendoriku/hegypt](https://github.com/hendoriku/hegypt)
 
 * * *
 #### Indonesia
@@ -205,6 +205,6 @@ Proyek ini dilisensikan di bawah **Lisensi MIT**.
 👤 Kontak
 ---------
 
-**Nama Anda** - [Profil GitHub](https://github.com/username-anda)
+**Nama Anda** - [Profil GitHub](https://github.com/hendoriku)
 
-Link Proyek: [https://github.com/username-anda/hegypt-app](https://github.com/username-anda/hegypt-app)
+Link Proyek: [https://github.com/hendoriku/hegypt](https://github.com/hendoriku/hegypt)
