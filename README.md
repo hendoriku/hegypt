@@ -1,5 +1,3 @@
-Dokumentasi Hegypt - AI Prompt Generator   
-
 Hegypt - AI Prompt Generator 🚀
 ===============================
 
