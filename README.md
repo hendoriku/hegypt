@@ -1,5 +1,6 @@
 Hegypt - AI Prompt Generator 🚀
 Dokumentasi Lengkap Aplikasi untuk Merancang, Menyimpan, dan Mengelola Prompt AI yang Ideal.
+
 🖼️ Tampilan Aplikasi
 
 ✨ Fitur Utama
