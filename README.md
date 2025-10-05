@@ -99,7 +99,7 @@ This project is distributed under the **MIT License**.
 👤 Contact
 ----------
 
-**Your Name** - [GitHub Profile](https://github.com/hendoriku)
+**Hendrik Mamarodia** - [GitHub Profile](https://github.com/hendoriku)
 
 Project Link: [https://github.com/hendoriku/hegypt](https://github.com/hendoriku/hegypt)
 
@@ -205,6 +205,6 @@ Proyek ini dilisensikan di bawah **Lisensi MIT**.
 👤 Kontak
 ---------
 
-**Nama Anda** - [Profil GitHub](https://github.com/hendoriku)
+**Hendrik Mamarodia** - [Profil GitHub](https://github.com/hendoriku)
 
 Link Proyek: [https://github.com/hendoriku/hegypt](https://github.com/hendoriku/hegypt)
