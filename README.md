@@ -4,8 +4,6 @@ Read in Other Language: [Indonesia](#Indonesia)
 Hegypt - Ideal AI Prompt Generator 🚀
 =====================================
 
-![Hegypt App Screenshot](https://i.ibb.co/6P6XyL6/hegypt-ss.png)
-
 **Hegypt** is a web application designed to tackle one of the biggest challenges in AI interaction: **crafting the perfect prompt**. This application acts as your personal assistant, guiding you through a structured form to design, save, manage, and reuse ideal prompts for various technical and creative needs.
 
 This project is a complete solution, from brainstorming a prompt in a local environment to making it accessible over the network with a custom domain via a reverse proxy.
