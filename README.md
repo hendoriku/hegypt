@@ -1,36 +1,99 @@
-# Hegypt - Ideal AI Prompt Generator 🚀
+Hegypt - AI Prompt Generator 🚀
+Dokumentasi Lengkap Aplikasi untuk Merancang, Menyimpan, dan Mengelola Prompt AI yang Ideal.
+🖼️ Tampilan Aplikasi
 
-![Hegypt App Screenshot](https://i.ibb.co/6P6XyL6/hegypt-ss.png)
+✨ Fitur Utama
 
-*Read this in other languages: [Indonesian](#-versi-bahasa-indonesia)*
+Formulir Prompt Terstruktur: Formulir metodis dengan field untuk Persona AI, Tujuan, Konteks, dan lainnya untuk memastikan prompt yang kaya detail.
+Manajemen Riwayat (CRUD): Simpan, lihat, edit, dan hapus prompt lama dengan mudah melalui halaman riwayat.
+Generator Teks Prompt Otomatis: Menggabungkan semua input menjadi satu teks prompt yang koheren dan siap disalin.
+Akses Jaringan & Domain Kustom: Didesain untuk bisa diakses melalui jaringan lokal menggunakan server WSGI Waitress.
+Peluncur Sekali Klik untuk Windows: Dilengkapi script .bat yang mengotomatiskan seluruh proses startup dengan satu klik.
 
-**Hegypt** is a web application designed to tackle one of the biggest challenges in AI interaction: **crafting the perfect prompt**. This application acts as your personal assistant, guiding you through a structured form to design, save, manage, and reuse ideal prompts for various technical and creative needs.
+🛠️ Tech Stack & Arsitektur
 
-This project is a complete solution, from brainstorming a prompt in a local environment to making it accessible over the network with a custom domain via a reverse proxy.
 
----
 
-## ✨ Key Features
+Kategori
+Teknologi
 
--   **Structured Prompt Form**: A methodically designed form with fields for AI Persona, Core Objective, Context, Output Format, and Rules to ensure every generated prompt is rich in detail.
--   **History Management (CRUD)**: Save every prompt you create to a database. Easily review, **Edit**, **Update**, and **Delete** old prompts through the history page.
--   **Automatic Prompt Text Generation**: Intelligently combines all inputs from the form into a single, coherent prompt text ready to be copied.
--   **Network & Custom Domain Accessibility**: Designed to be accessible over a local network using the **Waitress** WSGI server and can be pointed to from a public domain (e.g., `hegypt.dix.my.id`) using **Nginx Proxy Manager**.
--   **One-Click Windows Launcher**: Comes with a `.bat` script that automates the entire startup process—activating the virtual environment and starting the server—with a single click from a desktop shortcut.
 
----
 
-## 🛠️ Tech Stack & Architecture
+Backend
+Python, Flask, Flask-SQLAlchemy
 
-This application is built with a modern and reliable tech stack, suitable for both development and self-hosted deployment.
 
-| Category          | Technology                                                                              |
-| ----------------- | --------------------------------------------------------------------------------------- |
-| **Backend** | Python, Flask, Flask-SQLAlchemy                                                         |
-| **Frontend** | HTML5, CSS3, JavaScript (Vanilla)                                                       |
-| **Database** | MySQL (for local development)                                                           |
-| **WSGI Server** | Waitress (Cross-platform, ideal for Windows & local networks)                           |
-| **Reverse Proxy** | Nginx Proxy Manager (for domain management, SSL, and forwarding)                        |
+Frontend
+HTML5, CSS3, JavaScript (Vanilla)
 
-### Local Network Architecture
-The request flow when accessed via a domain:
+
+Database
+MySQL (untuk pengembangan lokal)
+
+
+Server WSGI
+Waitress (Cross-platform, ideal untuk Windows)
+
+
+Reverse Proxy
+Nginx Proxy Manager (untuk manajemen domain, SSL, dan forwarding)
+
+
+Arsitektur Jaringan Lokal
+Alur permintaan saat diakses melalui domain kustom:
+Pengguna --> https://hegypt.dix.my.id --> Nginx Proxy Manager --> http://IP_LOKAL_ANDA:5000 --> Server Waitress --> Aplikasi Flask
+
+⚙️ Panduan Instalasi & Konfigurasi
+1. Prasyarat
+Pastikan Anda sudah menginstal perangkat lunak berikut di komputer Anda:
+
+Python 3.8+
+MySQL Server
+Git
+
+2. Clone Repositori
+Buka terminal dan jalankan perintah berikut:
+git clone https://github.com/username-anda/hegypt-app.git
+cd hegypt-app
+
+3. Setup Lingkungan & Dependensi
+Buat dan aktifkan virtual environment, lalu install semua library yang dibutuhkan.
+# Buat virtual environment
+python -m venv myenv
+
+# Aktifkan di Windows
+.\myenv\Scripts\Activate.ps1
+
+# Install semua library dari requirements.txt
+pip install -r requirements.txt
+
+4. Setup Database MySQL
+Masuk ke MySQL client Anda dan jalankan perintah SQL berikut untuk membuat database dan user:
+CREATE DATABASE hegypt;
+CREATE USER 'hegypt'@'localhost' IDENTIFIED BY 'hegypt';
+GRANT ALL PRIVILEGES ON hegypt.* TO 'hegypt'@'localhost';
+FLUSH PRIVILEGES;
+
+5. Inisialisasi Tabel Database
+Jalankan skrip yang telah disediakan untuk membuat tabel prompt_history secara otomatis.
+python init_database.py
+
+Anda akan melihat pesan konfirmasi: >>> Database dan tabel 'prompt_history' berhasil dibuat! <<<
+🚀 Cara Penggunaan
+
+Jalankan Aplikasi: Cukup double-click file start_hegypt.bat atau shortcut desktop yang telah Anda buat.
+Proses Otomatis: Skrip akan membuka terminal, mengaktifkan lingkungan virtual, memulai server Waitress, dan membuka browser Anda ke alamat yang ditentukan.
+Gunakan Hegypt:
+Isi formulir di halaman utama untuk membuat prompt baru.
+Klik "Generate Prompt". Prompt akan ditampilkan dan otomatis tersimpan.
+Buka halaman "Lihat Riwayat" untuk mengelola (mengedit atau menghapus) prompt Anda.
+
+
+Hentikan Server: Untuk berhenti, kembali ke jendela terminal yang terbuka dan tekan Ctrl + C.
+
+📜 Lisensi
+Proyek ini dilisensikan di bawah MIT License.
+MIT License adalah lisensi perangkat lunak bebas permisif singkat yang berasal dari Massachusetts Institute of Technology (MIT). Sebagai lisensi permisif, ia hanya memberlakukan pembatasan yang sangat terbatas pada penggunaan kembali dan oleh karena itu memiliki kompatibilitas lisensi yang sangat baik.
+Dibuat oleh
+Hendrik Mamarodia
+Lihat Proyek di GitHub
